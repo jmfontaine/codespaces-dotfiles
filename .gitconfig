@@ -1,0 +1,38 @@
+[alias]
+  # Shorter names for commands
+  ci       = commit
+  co       = checkout
+  st       = status
+
+  # Display a nicely formatted history
+  lg       = log --pretty=tformat:'%Cred%h%Creset %cr - %C(bold)%s%Creset %G?%C(yellow)%d%Creset %Cgreen(%aN)%Creset' --date=relative
+
+  # Delete the latest commit but preserve its changes
+  oops     = reset HEAD^ --soft
+
+  # Delete merged branches
+  prune    = !git delete-merged-branches
+
+  # Commit all current changes with "WIP" as commit message
+  wip      = !git add -A && git commit -m 'WIP'
+
+[core]
+  editor       = vi
+  excludesfile = ~/.gitignore
+  pager        = cat
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
+[push]
+  default = current
+
+[status]
+  showUntrackedFiles = all
+
+[user]
+  name  = Jean-Marc Fontaine
+  email = jm@jmfontaine.net
